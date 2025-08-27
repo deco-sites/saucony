@@ -36,16 +36,19 @@
   ],
   "routes": [
     {
-      "__resolveType": "shopify/loaders/proxy.ts",
-      "extraPathsToProxy": [],
-      "includeSiteMap": [],
-      "excludePathsFromDecoSiteMap": []
-    },
-    {
       "__resolveType": "website/loaders/pages.ts"
     },
     {
       "__resolveType": "website/loaders/redirects.ts"
+    },
+    {
+      "__resolveType": "nuvemshop/loaders/proxy.ts",
+      "extraPathsToProxy": [],
+      "includeSiteMap": [],
+      "excludePathsFromDecoSiteMap": [],
+      "includeScriptsToHead": {
+        "includes": []
+      }
     }
   ],
   "caching": {
@@ -54,7 +57,7 @@
   "commerce": {
     "platform": "other"
   },
-  "platform": "shopify",
+  "platform": "nuvemshop",
   "__resolveType": "site/apps/site.ts",
   "firstByteThresholdMS": false,
   "abTesting": {

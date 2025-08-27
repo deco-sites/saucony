@@ -6,8 +6,6 @@ import { useComponent } from "../sections/Component.tsx";
 import { type Item } from "./minicart/Item.tsx";
 import CartProvider, { type Minicart } from "./minicart/Minicart.tsx";
 import Drawer from "./ui/Drawer.tsx";
-import UserProvider from "./user/Provider.tsx";
-import WishlistProvider, { type Wishlist } from "./wishlist/Provider.tsx";
 import { useScript } from "@deco/deco/hooks";
 declare global {
   interface Window {
@@ -238,31 +236,23 @@ export const action = async (
   _req: Request,
   ctx: AppContext,
 ) => {
-  const [minicart, wishlist, user] = await Promise.all([
-    ctx.invoke("site/loaders/minicart.ts"),
-    ctx.invoke("site/loaders/wishlist.ts"),
-    ctx.invoke("site/loaders/user.ts"),
-  ]);
+  const minicart = await ctx.invoke("site/loaders/minicart.ts");
   return {
     mode: "eager",
     minicart,
-    wishlist,
-    user,
   };
 };
-export const loader = (_props: unknown, _req: Request, _ctx: AppContext) => {
-  return {
+  export const loader = (_props: unknown, _req: Request, _ctx: AppContext) => {
+    return {
     mode: "lazy",
   };
 };
 interface Props {
   minicart?: Minicart | null;
-  wishlist?: Wishlist | null;
-  user?: Person | null;
   mode?: "eager" | "lazy";
 }
 export default function Session(
-  { minicart, wishlist, user, mode = "lazy" }: Props,
+  { minicart, mode = "lazy" }: Props,
 ) {
   if (mode === "lazy") {
     return (
@@ -298,8 +288,6 @@ export default function Session(
         }
       />
 
-      <WishlistProvider wishlist={wishlist ?? null} />
-      <UserProvider user={user ?? null} />
     </>
   );
 }
