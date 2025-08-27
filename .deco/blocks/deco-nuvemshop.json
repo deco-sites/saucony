@@ -1,0 +1,11 @@
+{
+  "__resolveType": "site/apps/deco/nuvemshop.ts",
+  "accessToken": {
+    "__resolveType": "website/loaders/secret.ts",
+    "encrypted": "b011f6c9cae737c657bf7c11db1985caf77629db708abe4cd40c211f7f683633dbee459e3df4ff5c156bd985b7953762",
+    "name": "TOKEN_NUVEMSHOP"
+  },
+  "platform": "nuvemshop",
+  "publicUrl": "https://decocxdemo.lojavirtualnuvem.com.br/",
+  "storeId": "decocxdemo"
+}

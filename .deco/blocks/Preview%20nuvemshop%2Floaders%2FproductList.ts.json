@@ -1,0 +1,6 @@
+{
+  "__resolveType": "nuvemshop/loaders/productList.ts",
+  "limit": 4,
+  "term": "Saucony",
+  "sort": "user"
+}
