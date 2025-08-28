@@ -2,7 +2,7 @@
   "__resolveType": "site/apps/deco/nuvemshop.ts",
   "accessToken": {
     "__resolveType": "website/loaders/secret.ts",
-    "encrypted": "b011f6c9cae737c657bf7c11db1985caf77629db708abe4cd40c211f7f683633dbee459e3df4ff5c156bd985b7953762",
+    "encrypted": "e68ee9c37ab2fef283441b539952424673a2ad34c6da4092d3e728b431068838393375c93a705430c9bc4655af007fcd",
     "name": "TOKEN_NUVEMSHOP"
   },
   "platform": "nuvemshop",
